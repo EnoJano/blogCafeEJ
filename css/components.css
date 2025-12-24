@@ -1,0 +1,128 @@
+/* ===============================
+   BLOG CARD
+   =============================== */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.meta {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .3s ease;
+}
+
+.blog-card:hover .photo {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.description {
+  padding: 1.2rem;
+}
+
+.description h1 {
+  font-size: 1.5rem;
+}
+
+.description h2 {
+  font-size: .95rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.read-more {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.read-more a {
+  color: var(--cafe-acento);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.read-more a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   ROTACIONES
+   =============================== */
+.rotar-izq { transform: rotate(-5deg); }
+.rotar-der { transform: rotate(5deg); }
+
+/* ===============================
+   BADGE DESARROLLO
+   =============================== */
+.construction-badge {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: .75rem;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (min-width: 640px) {
+  .blog-card { flex-direction: row; }
+  .meta { flex: 0 0 40%; height: auto; }
+}
+
+@media (max-width: 768px) {
+  .blog-card { max-width: 95%; }
+  .rotar-izq { transform: rotate(-2deg); }
+  .rotar-der { transform: rotate(2deg); }
+}
+
+article p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+article ul {
+  padding-left: 1.2rem;
+}
+
+.autor-box {
+  display: flex;
+  justify-content: center;
+}
+
+.autor-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border: 4px solid #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .autor-img {
+    width: 130px;
+    height: 130px;
+  }
+}

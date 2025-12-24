@@ -1,0 +1,118 @@
+/* ===============================
+   VARIABLES DE COLOR
+   =============================== */
+:root {
+  --cafe-principal: #6F4F37;
+  --cafe-acento: #a57753;
+  --negro: #000;
+  --blanco: #fff;
+}
+
+/* ===============================
+   BASE GLOBAL
+   =============================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F5F5DC;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+.no-seleccionable {
+  user-select: none;
+}
+
+/* ===============================
+   NAVBAR BASE
+   =============================== */
+.custom-navbar {
+  background-color: var(--cafe-principal);
+}
+
+/* ===============================
+   FONDO + PARALLAX
+   =============================== */
+.background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background-image: url('../img/fondoPantalla');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: translateY(var(--bg-offset, 0)) scale(1.1);
+  z-index: -1;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* ===============================
+   UTILIDADES
+   =============================== */
+.separador {
+  margin: 70px 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   Z-INDEX FIX
+   =============================== */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================================
+   PANTALLA DE CARGA
+   ===================================================== */
+.pantalla-carga {
+  position: fixed;
+  inset: 0;
+  background-color: #F5F5DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.tamanoImg {
+  width: 260px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
