@@ -31,7 +31,11 @@
 }
 
 .description {
-  padding: 1.2rem;
+  text-align: justify;
+  padding: 2.2rem;
+}
+.description p{
+  line-height: 1.15;
 }
 
 .description h1 {
@@ -45,7 +49,7 @@
 }
 
 .read-more {
-  text-align: right;
+  text-align: justify;
   margin-top: 1rem;
 }
 
@@ -125,4 +129,25 @@ article ul {
     width: 130px;
     height: 130px;
   }
+}
+
+.read-more a {
+  display: inline-block;
+
+  padding: 6px 14px;
+  border: 1.5px solid var(--cafe-acento);
+  border-radius: 20px;
+
+  color: var(--cafe-acento);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+.read-more a:hover {
+  background-color: var(--cafe-acento);
+  color: #fff;
+  transform: translateY(-1px);
 }

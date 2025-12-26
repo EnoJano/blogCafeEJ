@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
      =============================== */
   const enlaces = document.querySelectorAll('a[href]:not([data-bs-toggle])');
 
-  
+
 
   enlaces.forEach(enlace => {
     enlace.addEventListener('click', e => {
@@ -83,4 +83,27 @@ window.addEventListener('scroll', () => {
 
     ticking = true;
   }
+});
+
+const carousel = document.getElementById('carouselCafeterias');
+const direccionTexto = document.getElementById('direccionTexto');
+const mapaIframe = document.getElementById('mapaIframe');
+const mapaLink = document.getElementById('mapaLink');
+
+function actualizarInfo(slide) {
+  const direccion = slide.dataset.direccion;
+  const mapa = slide.dataset.mapa;
+
+  direccionTexto.innerHTML = direccion.replace(',', '<br>');
+  mapaIframe.src = `https://www.google.com/maps?q=${mapa}&output=embed`;
+  mapaLink.href = `https://www.google.com/maps/search/?api=1&query=${mapa}`;
+}
+
+// Inicial
+const slideInicial = carousel.querySelector('.carousel-item.active');
+actualizarInfo(slideInicial);
+
+// Al cambiar slide
+carousel.addEventListener('slid.bs.carousel', (e) => {
+  actualizarInfo(e.relatedTarget);
 });

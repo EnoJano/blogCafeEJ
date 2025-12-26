@@ -29,6 +29,11 @@
 
 .carousel-caption {
     padding: 1rem;
+    z-index: 10;
+}
+
+.map-embed iframe {
+    pointer-events: none;
 }
 
 .carousel-item h5 {
@@ -48,4 +53,33 @@
         max-width: 95%;
         margin: 1rem auto;
     }
+}
+
+/* ===============================
+   FIX CARRUSEL TIPOS DE CAFÉ
+   =============================== */
+#carouselTiposCafe {
+    position: relative;
+}
+
+/* Asegura que las flechas estén por encima */
+#carouselTiposCafe .carousel-control-prev,
+#carouselTiposCafe .carousel-control-next {
+    top: 25%;
+    bottom: auto;
+    width: 8%;
+    z-index: 10;
+}
+
+/* Hace visibles las flechas sobre fondo claro */
+#carouselTiposCafe .carousel-control-prev-icon,
+#carouselTiposCafe .carousel-control-next-icon {
+
+    padding: 2.2rem;
+}
+
+/* Opcional: área clickeable más clara */
+#carouselTiposCafe .carousel-control-prev,
+#carouselTiposCafe .carousel-control-next {
+    width: 8%;
 }
